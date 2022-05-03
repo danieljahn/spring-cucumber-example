@@ -27,11 +27,6 @@ public class HelloClient {
                 .exchange();
     }
 
-    public void assertGreeting(String expectedMessage) {
-        responseSpec.expectBody()
-                .jsonPath("message", expectedMessage).isEqualTo(expectedMessage);
-    }
-
     public void assertRepsonseCode(int responseCode) {
         responseSpec.expectStatus().isEqualTo(responseCode);
     }
